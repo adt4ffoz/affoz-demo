@@ -48,3 +48,13 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .banner {
+    &__over {
+      font-size: 40px;
+    }
+    &__content {
+      margin-left: 35px;
+    }
+  }
+}
