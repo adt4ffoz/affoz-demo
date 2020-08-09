@@ -1,17 +1,19 @@
 import React from "react";
-import "./App.css";
-
+import "./App.scss";
+//components
 import Nav from "./components/Nav/Nav";
 import Banner from "./components/BannerIamge/BannerImage";
 import Video from "./components/Video/Video";
-
+import FixedButton from "./components/FixedButton/FiexdButton";
+// img
 import ImageBannerCity from "./assets/images/city.jpg";
 import ImageBannerGreenHose from "./assets/images/greenhose.png";
 import ImageBannerDailyFarm from "./assets/images/milk.jpg";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
+      <FixedButton />
       <Nav />
       <Banner
         img={ImageBannerCity}
