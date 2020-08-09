@@ -1,0 +1,45 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  padding: 10px;
+  top: 10px;
+  &__logo {
+    width: 90px;
+    height: 35px;
+  }
+  &__menu {
+    display: flex;
+    list-style-type: none;
+  }
+  &__link {
+    margin-left: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      font-weight: 700;
+    }
+  }
+
+  &__btn {
+    border: none;
+    height: 32px;
+    width: 120px;
+    font-size: 22px;
+    font-weight: 500;
+    background-color: #facd02;
+    transition: all 0.3s;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  &__action {
+    margin-right: 10px;
+  }
+}

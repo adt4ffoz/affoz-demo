@@ -1,0 +1,50 @@
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  &__over {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.773546918767507) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+    display: flex;
+    align-items: flex-end;
+    font-size: 65px;
+  }
+  &__content {
+    margin-left: 30px;
+  }
+  &__after {
+    letter-spacing: 10px;
+  }
+  &__mid {
+    font-weight: 100;
+    letter-spacing: 10px;
+    margin-left: 20px;
+  }
+  &__btn {
+    border: solid;
+    height: 50px;
+    width: 180px;
+    border: {
+      width: 1px;
+      color: white;
+    }
+    background-color: rgba($color: #000000, $alpha: 0);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
