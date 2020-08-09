@@ -5,6 +5,7 @@ import Nav from "./components/Nav/Nav";
 import Banner from "./components/BannerIamge/BannerImage";
 import Video from "./components/Video/Video";
 import FixedButton from "./components/FixedButton/FiexdButton";
+import Footer from "./components/Footer/Footer";
 // img
 import ImageBannerCity from "./assets/images/city.jpg";
 import ImageBannerGreenHose from "./assets/images/greenhose.png";
@@ -34,6 +35,7 @@ function App() {
         mid="FEDDACK"
         after=""
       />
+      <Footer />
     </div>
   );
 }
