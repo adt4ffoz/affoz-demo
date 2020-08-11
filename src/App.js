@@ -6,20 +6,28 @@ import Banner from "./components/BannerIamge/BannerImage";
 import Video from "./components/Video/Video";
 import FixedButton from "./components/FixedButton/FiexdButton";
 import Footer from "./components/Footer/Footer";
+import GenenalTitle from "./components/GenenalTitle/GenenalTitle";
+import Feedback from "./components/Feedback/Feedback";
 // img
 import ImageBannerCity from "./assets/images/homer.jpg";
 import ImageBannerGreenHose from "./assets/images/banner.jpg";
 import ImageBannerDailyFarm from "./assets/images/feedback.jpg";
-import ImageBannerNews1 from "./assets/images/bannernews1.jpg"
-import ImageBannerNews2 from "./assets/images/bannernews2.jpg"
+import ImageBannerNews1 from "./assets/images/bannernews1.jpg";
+import ImageBannerNews2 from "./assets/images/bannernews2.jpg";
+import User1 from "./assets/images/user1.jpg";
+import User2 from "./assets/images/user2.jpg";
+import User3 from "./assets/images/user3.jpg";
+import User4 from "./assets/images/user4.jpg";
+import User5 from "./assets/images/user5.jpg";
+
 // import Swiper core and required components
-import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/scrollbar/scrollbar.scss";
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
@@ -43,27 +51,31 @@ function App() {
         onSwiper={(swiper) => console.log(swiper)}
         autoplay={{ delay: 3000 }}
       >
-        <SwiperSlide> <Banner
-          img={ImageBannerGreenHose}
-          before="FARM"
-          mid="BY LAPTOP"
-          after="MANAGEMENT"
-        /></SwiperSlide>
-        <SwiperSlide> <Banner
-          img={ImageBannerNews1}
-          before="FARM"
-          mid="BY LAPTOP"
-          after="MANAGEMENT"
-        /></SwiperSlide>
-        <SwiperSlide> <Banner
-          img={ImageBannerNews2}
-          before="FARM"
-          mid="BY LAPTOP"
-          after="MANAGEMENT"
-        /></SwiperSlide>
-
+        <SwiperSlide>
+          <Banner
+            img={ImageBannerGreenHose}
+            before="FARM"
+            mid="BY LAPTOP"
+            after="MANAGEMENT"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Banner
+            img={ImageBannerNews1}
+            before="FARM"
+            mid="BY LAPTOP"
+            after="MANAGEMENT"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Banner
+            img={ImageBannerNews2}
+            before="FARM"
+            mid="BY LAPTOP"
+            after="MANAGEMENT"
+          />
+        </SwiperSlide>
       </Swiper>
-
       <Video />
       <Banner
         img={ImageBannerDailyFarm}
@@ -71,6 +83,32 @@ function App() {
         mid="FEDDACK"
         after=""
       />
+      <GenenalTitle title="FEEDBACK" />
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={4}
+        navigation
+        pagination={{ clickable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        autoplay={{ delay: 3000 }}
+      >
+        <SwiperSlide>
+          <Feedback url={User1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Feedback url={User2} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Feedback url={User3} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Feedback url={User4} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Feedback url={User5} />
+        </SwiperSlide>
+      </Swiper>
+      <GenenalTitle title="PARTNER" />
       <Footer />
     </div>
   );

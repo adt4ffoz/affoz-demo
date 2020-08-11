@@ -11,7 +11,6 @@ import ImageDalat from "../../assets/images/datlat.png";
 export default function Footer() {
   return (
     <div className="footer">
-      <h1 className="footer__title">PARTNER</h1>
       <div className="footer__container-partner">
         <img className="footer__image" src={ImageTH} alt="" />
         <img className="footer__image" src={ImageVietGap} alt="" />
