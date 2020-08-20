@@ -1,5 +1,5 @@
 import React from "react";
-import "../Footer/Footer.scss";
+import "../../Footer/Footer.scss";
 
 export default function GenenalTitle({ title }) {
   return (

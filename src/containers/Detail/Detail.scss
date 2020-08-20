@@ -1,0 +1,10 @@
+.detail {
+  height: 100vh;
+  background-color: white;
+  margin-top: 100px;
+  font-family: "Montserrat", sans-serif;
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

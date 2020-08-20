@@ -1,0 +1,31 @@
+import React from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+
+import { Home, Career, Detail } from "../containers/index";
+
+import { BlankLayout, MainLayout } from "../layout";
+
+import PubliceRoute from "./PubliceRoute";
+// import PrivateRouter from "./PrivateRoute";
+
+export default function Routers() {
+  return (
+    <Router>
+      <Switch>
+        <PubliceRoute exact path={`/`} component={Home} layout={MainLayout} />
+        <PubliceRoute
+          exact
+          path={`/career`}
+          component={Career}
+          layout={MainLayout}
+        />
+        <PubliceRoute
+          exact
+          path={`/career/:id`}
+          component={Detail}
+          layout={MainLayout}
+        />
+      </Switch>
+    </Router>
+  );
+}
