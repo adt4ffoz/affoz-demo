@@ -35,8 +35,8 @@ export default function Nav() {
           <li className="nav__link">VIDEOS</li>
         </ul>
         <div className="nav__action">
-          <button className="nav__btn">SIGNIN</button>
-          <button className="nav__btn">LOGIN</button>
+          <button className="nav__btn">sign-in</button>
+          <button className="nav__btn">login</button>
         </div>
       </div>
     </div>
