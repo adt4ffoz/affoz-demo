@@ -5,3 +5,11 @@
 .app {
   background-color: #1c1c1c;
 }
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet {
+  background-color: white !important;
+}

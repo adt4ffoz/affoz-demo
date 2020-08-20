@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 //components
 import Nav from "./components/Nav/Nav";
@@ -33,6 +33,12 @@ import "swiper/components/scrollbar/scrollbar.scss";
 SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
 
 function App() {
+  const innerWidth = window.innerWidth;
+  const [] = useState(window.innerWidth);
+  useEffect(() => {
+    console.log(window.innerWidth);
+  }, []);
+
   return (
     <div className="app">
       <FixedButton />
@@ -49,7 +55,7 @@ function App() {
         navigation
         pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 5000 }}
       >
         <SwiperSlide>
           <Banner
@@ -86,11 +92,24 @@ function App() {
       <GenenalTitle title="FEEDBACK" />
       <Swiper
         spaceBetween={50}
-        slidesPerView={4}
         navigation
         pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 5000 }}
+        breakpoints={{
+          576: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1,
+          },
+          992: {
+            slidesPerView: 2,
+          },
+          1200: {
+            slidesPerView: 4,
+          },
+        }}
       >
         <SwiperSlide>
           <Feedback url={User1} />
