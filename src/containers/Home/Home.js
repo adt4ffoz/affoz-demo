@@ -48,7 +48,6 @@ export default function Home() {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
         autoplay={{ delay: 5000 }}
       >
         <SwiperSlide>
@@ -88,7 +87,6 @@ export default function Home() {
         spaceBetween={50}
         navigation
         pagination={{ clickable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
         autoplay={{ delay: 5000 }}
         breakpoints={{
           576: {

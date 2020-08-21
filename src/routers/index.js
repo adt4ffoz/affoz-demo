@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 
-import { Home, Career, Detail } from "../containers/index";
+import { Home, Career, Detail, About } from "../containers/index";
 
 import { BlankLayout, MainLayout } from "../layout";
 
@@ -23,6 +23,12 @@ export default function Routers() {
           exact
           path={`/career/:id`}
           component={Detail}
+          layout={MainLayout}
+        />
+        <PubliceRoute
+          exact
+          path={`/about`}
+          component={About}
           layout={MainLayout}
         />
       </Switch>

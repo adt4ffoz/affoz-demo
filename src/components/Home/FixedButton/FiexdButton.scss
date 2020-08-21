@@ -34,5 +34,9 @@
         transform: scale(1.05);
       }
     }
+    &--bottom {
+      position: relative;
+      left: 23px;
+    }
   }
 }

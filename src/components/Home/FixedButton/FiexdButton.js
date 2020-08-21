@@ -40,7 +40,7 @@ export default function FiexdButton() {
     <div className="fixed">
       <div className="fixed__container">
         {isShowToBottom && (
-          <button className="btn" onClick={handleMoveTopButtom}>
+          <button className="btn btn--bottom" onClick={handleMoveTopButtom}>
             <i className="fas fa-angle-down"></i>
           </button>
         )}
