@@ -4,8 +4,9 @@ import "./Home.scss";
 import Banner from "../../components/Home/BannerIamge/BannerImage";
 import Video from "../../components/Home/Video/Video";
 import FixedButton from "../../components/Home/FixedButton/FiexdButton";
-import GenenalTitle from "../../components/Home/GenenalTitle/GenenalTitle";
+import GeneralTitle from "../../components/Home/GeneralTitle/GeneralTitle";
 import Feedback from "../../components/Home/Feedback/Feedback";
+import Partner from "../../components/Home/Partner/Partner";
 
 // img
 import ImageBannerCity from "../../assets/images/homer.jpg";
@@ -82,7 +83,7 @@ export default function Home() {
         mid="FEDDACK"
         after=""
       />
-      <GenenalTitle title="FEEDBACK" />
+      <GeneralTitle title="FEEDBACK" />
       <Swiper
         spaceBetween={50}
         navigation
@@ -120,7 +121,8 @@ export default function Home() {
           <Feedback url={User5} />
         </SwiperSlide>
       </Swiper>
-      <GenenalTitle title="PARTNER" />
+      <GeneralTitle title="PARTNER" />
+      <Partner />
     </div>
   );
 }

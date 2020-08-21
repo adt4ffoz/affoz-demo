@@ -11,6 +11,12 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+/* .fixed {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
