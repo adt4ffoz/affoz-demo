@@ -8,8 +8,10 @@ export default function About() {
       <div className="about__logo">
         <img src={ImageAbout} alt="" className="about__img" />
       </div>
-      <h1 className="about__title">NÔNG NGHIỆP KỸ THUẬT CAO</h1>
-      <div className="about__undercode"></div>
+      <h1 className="about__title">
+        <b className="about__underline">NÔNG NGHIỆP</b> KỸ THUẬT CAO
+      </h1>
+
       <h2 className="about__subtitle">Tiềm Năng Ngành Nông Nghiệp Việt Nam</h2>
       <p className="about__paragraph">
         Từ năm 2013-2019, công nghiệp chế biến nông sản cả nước đã có bước phát
