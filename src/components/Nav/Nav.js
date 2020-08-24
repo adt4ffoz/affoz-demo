@@ -1,42 +1,105 @@
 import React, { useState } from "react";
-import Logo from "../../assets/images/logo.png";
+import { Link, useLocation } from "react-router-dom";
+//image
+import LogoDart from "../../assets/images/logo-dark.png";
+import LogoWhite from "../../assets/images/logo.png";
+//scss
 import "./Nav.scss";
 
 export default function Nav() {
-  const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(true);
+  let location = useLocation();
+  let pathname = location.pathname;
 
   const hanldeShowMenu = () => {
     setIsShow(!isShow);
   };
 
   return (
-    <div className="nav">
-      <div className="nav__container-logo">
-        <img src={Logo} alt="" className="nav__logo" />
-        <button
-          className="nav__btn nav__btn--reponsive"
-          onClick={hanldeShowMenu}
+    <div className={pathname === "/" ? "nav nav--home" : "nav"}>
+      <div className="nav__container">
+        <div className="nav__logo-menu">
+          <Link to="/">
+            <img
+              src={pathname === "/" ? LogoWhite : LogoDart}
+              alt=""
+              className="nav__logo"
+            />
+          </Link>
+          <ul className={isShow ? "nav__menu nav__menu--show" : "nav__menu"}>
+            <Link
+              to="/about"
+              className={
+                pathname === "/" ? "nav__link nav__link--home" : "nav__link"
+              }
+            >
+              ABOUT
+            </Link>
+            <Link
+              to="/"
+              className={
+                pathname === "/" ? "nav__link nav__link--home" : "nav__link"
+              }
+            >
+              PRICING
+            </Link>
+            <Link
+              to="/career"
+              className={
+                pathname === "/" ? "nav__link nav__link--home" : "nav__link"
+              }
+            >
+              JOBS
+            </Link>
+            <Link
+              to="/"
+              className={
+                pathname === "/" ? "nav__link nav__link--home" : "nav__link"
+              }
+            >
+              CONTACT
+            </Link>
+            <Link
+              to="/"
+              className={
+                pathname === "/" ? "nav__link nav__link--home" : "nav__link"
+              }
+            >
+              VIDEOS
+            </Link>
+          </ul>
+        </div>
+        <div
+          className={isShow ? "nav__action nav__action--show" : "nav__action"}
         >
-          <i className="fas fa-bars"></i>
-        </button>
-      </div>
-      <div
-        className={
-          isShow
-            ? "nav__container-menu nav__container-menu--hidden"
-            : "nav__container-menu nav__container-menu--show"
-        }
-      >
-        <ul className="nav__menu">
-          <li className="nav__link">ABOUT</li>
-          <li className="nav__link">PRICING</li>
-          <li className="nav__link">CAREER</li>
-          <li className="nav__link">CONTACT</li>
-          <li className="nav__link">VIDEOS</li>
-        </ul>
-        <div className="nav__action">
-          <button className="nav__btn">SIGNIN</button>
-          <button className="nav__btn">LOGIN</button>
+          <button
+            className={
+              pathname === "/" ? "nav__btn nav__btn--home" : "nav__btn"
+            }
+          >
+            sign-in
+          </button>
+          <button
+            className={
+              pathname === "/" ? "nav__btn nav__btn--home" : "nav__btn"
+            }
+          >
+            login
+          </button>
+        </div>
+        <div
+          className={isShow ? "nav__show " : "nav__show nav__show--reponsive"}
+        >
+          <button
+            className={
+              pathname === "/"
+                ? "nav__btn nav__btn--reponsive"
+                : "nav__btn nav__btn--reponsive nav__btn--nohome"
+            }
+            onClick={hanldeShowMenu}
+          >
+            <i className="fas fa-bars"></i>
+          </button>
         </div>
       </div>
     </div>

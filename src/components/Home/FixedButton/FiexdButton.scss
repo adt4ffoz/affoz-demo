@@ -4,6 +4,7 @@
   display: flex;
   width: 100%;
   z-index: 999;
+  // background-color: #1c1c1c;
   &__container {
     flex: 1;
     display: flex;
@@ -32,6 +33,10 @@
       &:hover {
         transform: scale(1.05);
       }
+    }
+    &--bottom {
+      position: relative;
+      left: 23px;
     }
   }
 }

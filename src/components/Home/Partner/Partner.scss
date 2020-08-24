@@ -1,0 +1,8 @@
+.partner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &__image {
+        width: 216px;
+    }
+}
