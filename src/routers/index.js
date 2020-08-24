@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import { Home, Career, Detail, About } from "../containers/index";
 
-import { BlankLayout, MainLayout } from "../layout";
+import { MainLayout } from "../layout";
 
 import PubliceRoute from "./PubliceRoute";
 // import PrivateRouter from "./PrivateRoute";

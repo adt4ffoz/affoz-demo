@@ -476,7 +476,7 @@ export const data = [
       title: "Mục tiêu affoz",
       content: [
         "Công ty Affoz thành lập để giải quyết các vấn đề về quản lí nâng cao nâng suất và sản xuất lương thực, thực phẩm sử dụng các công nghệ tự động hoá, tối đa sức lao động và để giúp các trang trại duy trì phát triển quản lí giúp các kỹ sư nông nghiệp, nhà thu mua, người tiêu dùng nhận được giá trị lương thực, thực phẩm với truy suất nguồn gốc, đa dạng lương thực và thực phẩm với chi phí thấp, nhanh nhất có thể.",
-        ,
+
         "Là một Tester kiểm thử phần mềm, bạn sẽ phối hợp cùng thành viên khác xây dựng, tìm hiểu và khắc phục những vấn đề trong quá trình phát triển sản phẩm.",
       ],
     },
