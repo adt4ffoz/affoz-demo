@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { ArrowLeft } from "react-feather";
+import { Link } from "react-router-dom";
 
 import { Button } from "../../components/common/index";
 import LogoDart from "../../assets/images/logo-dark.png";
+import IconVN from "../../assets/images/vietnam.png";
 import "./CreateUser.scss";
 
 export default function CreateUser() {
@@ -113,6 +115,14 @@ export default function CreateUser() {
                 typeButton="button"
                 handleClick={handleChangeNext}
               />
+              <div className="create__have">
+                <span>
+                  Bạn đã có mật khẩu chưa?{" "}
+                  <Link className="create__link" to="/login">
+                    Đăng nhập
+                  </Link>
+                </span>
+              </div>
             </div>
           ) : (
             <div className="create__container-input">
@@ -201,6 +211,16 @@ export default function CreateUser() {
                 />
               </div>
               <Button title="Hoàn tất" typeButton="submit" />
+              <div className="create__have">
+                <input type="checkbox" />
+                <span>
+                  Tôi đã đồng ý với các
+                  <Link className="create__link" to="/login">
+                    điều khoản của Affoz
+                  </Link>
+                </span>
+                <img className="create__vn" src={IconVN} alt="" />
+              </div>
             </div>
           )}
         </form>
