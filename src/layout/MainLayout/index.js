@@ -9,13 +9,12 @@ export default function MainLayout({ children }) {
   let pathname = location.pathname;
 
   return (
-    <>
+    <div className="layout">
       <Nav />
       <div className={pathname === "/" ? "main-layout--home" : "main-layout"}>
         {children}
       </div>
-
       <Footer />
-    </>
+    </div>
   );
 }

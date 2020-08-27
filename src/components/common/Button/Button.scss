@@ -1,0 +1,15 @@
+.btn {
+  height: 40px;
+  width: 100%;
+  border: none;
+  background-color: #facd02;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.4s;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    background-color: #e6bd07;
+  }
+}

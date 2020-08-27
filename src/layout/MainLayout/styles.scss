@@ -1,8 +1,16 @@
 .main-layout {
   margin-bottom: 80px;
   margin-top: 76px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
   &--home {
     margin-bottom: 0px;
     margin-top: 0px;
   }
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
