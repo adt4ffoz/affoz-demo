@@ -69,16 +69,19 @@ export default function Nav() {
             </Link>
           </ul>
         </div>
+
         <div
           className={isShow ? "nav__action nav__action--show" : "nav__action"}
         >
-          <button
-            className={
-              pathname === "/" ? "nav__btn nav__btn--home" : "nav__btn"
-            }
-          >
-            sign-in
-          </button>
+          <Link to="/create-user">
+            <button
+              className={
+                pathname === "/" ? "nav__btn nav__btn--home" : "nav__btn"
+              }
+            >
+              create user
+            </button>
+          </Link>
           <button
             className={
               pathname === "/" ? "nav__btn nav__btn--home" : "nav__btn"
