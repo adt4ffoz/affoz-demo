@@ -82,13 +82,15 @@ export default function Nav() {
               create user
             </button>
           </Link>
-          <button
-            className={
-              pathname === "/" ? "nav__btn nav__btn--home" : "nav__btn"
-            }
-          >
-            login
-          </button>
+          <Link to="/login">
+            <button
+              className={
+                pathname === "/" ? "nav__btn nav__btn--home" : "nav__btn"
+              }
+            >
+              login
+            </button>
+          </Link>          
         </div>
         <div
           className={isShow ? "nav__show " : "nav__show nav__show--reponsive"}

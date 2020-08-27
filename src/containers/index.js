@@ -3,6 +3,7 @@ export { default as Career } from "./Career/Career";
 export { default as Detail } from "./Detail/Detail";
 export { default as About } from "./About/About";
 export { default as CreateUser } from "./CreateUser/CreateUser";
+export { default as Login } from "./Login/Login";
 
 // export { default as Login } from "./Login";
 // export { default as SignUp } from "./SignUp";
