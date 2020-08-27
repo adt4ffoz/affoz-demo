@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import { Home, Career, Detail, About, CreateUser } from "../containers/index";
 
-import { MainLayout } from "../layout";
+import { MainLayout, AuthLayout } from "../layout";
 
 import PubliceRoute from "./PubliceRoute";
 // import PrivateRouter from "./PrivateRoute";
@@ -35,7 +35,7 @@ export default function Routers() {
           exact
           path={`/create-user`}
           component={CreateUser}
-          layout={MainLayout}
+          layout={AuthLayout}
         />
       </Switch>
     </Router>
