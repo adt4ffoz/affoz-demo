@@ -11,7 +11,6 @@ import "./CreateUser.scss";
 
 export default function CreateUser() {
   const [isNext, setIsNext] = useState(true);
-
   const ValidationSchema = Yup.object().shape({
     name: Yup.string("")
       .min(4, "Ít nhất 4 ký tự")
@@ -45,6 +44,8 @@ export default function CreateUser() {
     validationSchema: ValidationSchema,
     onSubmit: (values) => console.log(values),
   });
+
+  const { name, yourFarm, email, phone, password, confirm } = formik.values;
 
   const handleChangeBack = () => {
     setIsNext(true);
@@ -113,7 +114,8 @@ export default function CreateUser() {
               <Button
                 title="Tiếp tục"
                 typeButton="button"
-                handleClick={handleChangeNext}
+                handleClick={name && yourFarm ? handleChangeNext : null}
+                status={name && yourFarm ? null : "hidden"}
               />
               <div className="create__have">
                 <span>
@@ -210,13 +212,17 @@ export default function CreateUser() {
                   onBlur={formik.handleBlur}
                 />
               </div>
-              <Button title="Hoàn tất" typeButton="submit" />
+              <Button
+                title="Hoàn tất"
+                typeButton="submit"
+                status={email && phone && password && confirm ? null : "hidden"}
+              />
               <div className="create__have">
                 <input type="checkbox" />
                 <span>
-                  Tôi đã đồng ý với các
+                  Tôi đã đồng ý với &nbsp;
                   <Link className="create__link" to="/login">
-                    điều khoản của Affoz
+                    CÁC ĐIỀU KHOẢN CỦA AFFOZ
                   </Link>
                 </span>
                 <img className="create__vn" src={IconVN} alt="" />

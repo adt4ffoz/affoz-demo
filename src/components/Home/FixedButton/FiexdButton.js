@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { ChevronDown, ArrowUp } from "react-feather";
+
 import "./FiexdButton.scss";
 
 export default function FiexdButton() {
@@ -40,15 +42,21 @@ export default function FiexdButton() {
     <div className="fixed">
       <div className="fixed__container">
         {isShowToBottom && (
-          <button className="btn btn--bottom" onClick={handleMoveTopButtom}>
-            <i className="fas fa-angle-down"></i>
+          <button
+            className="fixed__btn fixed__btn--bottom"
+            onClick={handleMoveTopButtom}
+          >
+            <ChevronDown size={50} />
           </button>
         )}
       </div>
       <div className="fixed__container">
         {isShowToTop && (
-          <button className="btn btn--top" onClick={handleMoveToTop}>
-            <i className="fas fa-arrow-up"></i>
+          <button
+            className="fixed__btn fixed__btn--top"
+            onClick={handleMoveToTop}
+          >
+            <ArrowUp />
           </button>
         )}
       </div>

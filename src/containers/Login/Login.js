@@ -12,60 +12,45 @@ export default function Login() {
   const [isNext, setIsNext] = useState(true);
 
   const ValidationSchema = Yup.object().shape({
-    name: Yup.string("")
-      .min(4, "Ít nhất 4 ký tự")
-      .max(15, "Nhiều nhất 15 ký tự")
-      .required("Bắt buộc"),
-    yourFarm: Yup.string("")
-      .min(4, "Ít nhất 4 ký tự")
-      .max(15, "Nhiều nhất 15 ký tự")
-      .required("Bắt buộc"),
-    email: Yup.string("").email("Email không khả dụng").required("Bắt buộc"),
+    emailOrPhone: Yup.string("").required("Bắt buộc"),
     password: Yup.string("").min(8, "Ít nhất 8 kí tự").required("Bắt buộc"),
-    phone: Yup.string("")
-      .min(10, "Ít nhất là 10 số")
-      .max(11, "Nhiều nhất là 11 số")
-      .required("Bắt buộc"),
-    confirm: Yup.string("")
-      .required("Bắt buộc")
-      .test("Mật khẩu chưa khớp", "Mật khẩu đã khớp", function (value) {
-        return this.parent.password === value;
-      }),
   });
   const formik = useFormik({
     initialValues: {
-      name: "",
-      yourFarm: "",
-      email: "",
-      phone: "",
+      emailOrPhone: "",
       password: "",
-      confirm: "",
     },
     validationSchema: ValidationSchema,
     onSubmit: (values) => console.log(values),
   });
 
+  const { emailOrPhone, password } = formik.values;
+
   const handleChangeBack = () => {
     setIsNext(true);
   };
-  const handleChangeNext = () => {
-    setIsNext(false);
-  };
+  // const handleChangeNext = () => {
+  //   setIsNext(false);
+  // };
 
   const firstParagraph = (
-    <p>Nếu bạn chưa có tài khoản hãy <span><Link to="/create-user" className="link">đăng ký</Link></span></p>
-  )
+    <p>
+      Nếu bạn chưa có tài khoản hãy{" "}
+      <span>
+        <Link to="/create-user" className="login__link">
+          Đăng ký
+        </Link>
+      </span>
+    </p>
+  );
 
   const secondParagraph = (
     <p>
-      <Link 
-        to="/"
-        className="link"
-      >
+      <Link to="/" className="login__link">
         Quên mật khẩu
       </Link>
     </p>
-  )
+  );
 
   return (
     <div className="create">
@@ -80,59 +65,60 @@ export default function Login() {
           </div>
         </div>
         <form className="create__form" onSubmit={formik.handleSubmit}>
-            <div className="create__container-input">
-              <div className="create__main">
-                <div className="create__err">
-                  <span className="create__err">
-                    {formik.touched.name && formik.errors.name}
-                  </span>
-                </div>
-                <input
-                  className={
-                    formik.touched.name && formik.errors.name
-                      ? "create__input create__input--err"
-                      : "create__input"
-                  }
-                  type="text"
-                  placeholder="Email / số điện thoại"
-                  name="name"
-                  id="name"
-                  onChange={formik.handleChange}
-                  value={formik.values.name}
-                  onBlur={formik.handleBlur}
-                />
+          <div className="create__container-input">
+            <div className="create__main">
+              <div className="create__err">
+                <span className="create__err">
+                  {formik.touched.emailOrPhone && formik.errors.emailOrPhone}
+                </span>
               </div>
-              <div className="create__main">
-                <div className="create__err">
-                  <span className="create__err">
-                    {formik.touched.yourFarm && formik.errors.yourFarm}
-                  </span>
-                </div>
-                <input
-                  className={
-                    formik.touched.yourFarm && formik.errors.yourFarm
-                      ? "create__input create__input--err"
-                      : "create__input"
-                  }
-                  type="password"
-                  placeholder="Mật khẩu"
-                  name="yourFarm"
-                  id="yourFarm"
-                  onChange={formik.handleChange}
-                  value={formik.values.yourFarm}
-                  onBlur={formik.handleBlur}
-                />
-              </div>
-              <Button
-                title="Vào Trang Quản Lý"
-                typeButton="button"
-                handleClick={() => {}}
+              <input
+                className={
+                  formik.touched.emailOrPhone && formik.errors.emailOrPhone
+                    ? "create__input create__input--err"
+                    : "create__input"
+                }
+                type="text"
+                placeholder="Email / số điện thoại"
+                name="emailOrPhone"
+                id="emailOrPhone"
+                onChange={formik.handleChange}
+                value={formik.values.emailOrPhone}
+                onBlur={formik.handleBlur}
               />
-              <div className="login-footer">
-                {firstParagraph}
-                {secondParagraph}
-              </div>              
             </div>
+            <div className="create__main">
+              <div className="create__err">
+                <span className="create__err">
+                  {formik.touched.password && formik.errors.password}
+                </span>
+              </div>
+              <input
+                className={
+                  formik.touched.password && formik.errors.password
+                    ? "create__input create__input--err"
+                    : "create__input"
+                }
+                type="password"
+                placeholder="Mật khẩu"
+                name="password"
+                id="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
+              />
+            </div>
+            <Button
+              title="Vào Trang Quản Lý"
+              typeButton="button"
+              handleClick={() => {}}
+              status={emailOrPhone && password ? null : "hidden"}
+            />
+            <div className="login-footer">
+              {firstParagraph}
+              {secondParagraph}
+            </div>
+          </div>
         </form>
       </div>
     </div>

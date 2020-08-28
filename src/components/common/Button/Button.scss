@@ -12,4 +12,8 @@
     outline: none;
     background-color: #e6bd07;
   }
+  &--hidden {
+    background-color: #fff4c4;
+    cursor: not-allowed;
+  }
 }
