@@ -15,13 +15,13 @@ export default function Routers() {
         <PubliceRoute exact path={`/`} component={Home} layout={MainLayout} />
         <PubliceRoute
           exact
-          path={`/career`}
+          path={`/job`}
           component={Career}
           layout={MainLayout}
         />
         <PubliceRoute
           exact
-          path={`/career/:id`}
+          path={`/job/:id`}
           component={Detail}
           layout={MainLayout}
         />

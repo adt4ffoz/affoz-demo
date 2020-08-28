@@ -11,7 +11,7 @@ export default function Career() {
         <h2>Engineering</h2>
         <div className="career__list">
           {data.map((a, i) => (
-            <Link to={`/career/${a.id}`} key={i}>
+            <Link to={`/job/${a.id}`} key={i}>
               {a.job}
             </Link>
           ))}

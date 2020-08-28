@@ -44,7 +44,7 @@ export default function Nav() {
               PRICING
             </Link>
             <Link
-              to="/career"
+              to="/job"
               className={
                 pathname === "/" ? "nav__link nav__link--home" : "nav__link"
               }
